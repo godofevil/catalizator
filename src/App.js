@@ -16,7 +16,7 @@ class App extends React.Component {
         fetch('https://api.thecatapi.com/v1/images/search')
           .then(response => response.json())
           .then(response => this.setState({url: response[0].url}))
-          .catch(error => alert(error))
+          .catch(error => alert(error));
      }
 
     componentDidMount = () => this.getImage();
@@ -31,7 +31,7 @@ class App extends React.Component {
                 />
                 <button onClick={this.getImage} className="app__button">
                     {!this.state.imageLoaded ? <Loader /> : 'Next'}
-                </button>                
+                </button>
             </div>
         )
     }
